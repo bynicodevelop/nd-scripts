@@ -33,7 +33,10 @@ if (params.offer && params.offerdays) {
   } else {
     const data = JSON.parse(cookieBdOffer);
 
-    if (Date.parse(data.date) < new Date().getTime()) {
+    if (
+      Date.parse(data.date) < new Date().getTime() &&
+      data.id != params.offer
+    ) {
       setCookieWithParams(params.offer, params.offerdays);
     }
   }
