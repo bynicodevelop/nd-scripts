@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       const counter = document.querySelector(counterId);
 
-      counter.style.display = "block";
+      counter.classList.remove("nd-offer-hidden");
       counter.setAttribute("data-date", todayDate);
       counter.setAttribute("data-hour", extratedDate.getHours());
       counter.setAttribute("data-min", extratedDate.getMinutes());
