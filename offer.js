@@ -19,7 +19,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var diff =
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
-    if (diff < 48) {
+    if (diff < 0) {
+      document.querySelector("#nd-main-pricing").style.display = "block";
+    } else if (diff < 48) {
       const counterId = "#nd-counter-pricing";
 
       const counter = document.querySelector(counterId);
