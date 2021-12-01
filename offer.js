@@ -20,8 +20,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
     console.log(extratedDate.getTime() - new Date().getTime());
+    console.log(Math.abs(extratedDate.getTime() - new Date().getTime()));
+    console.log(diff);
 
-    if (extratedDate.getTime() - new Date().getTime() < 0) {
+    if (extratedDate.getTime() - new Date().getTime() <= 0) {
       document.querySelector("#nd-main-pricing").style.display = "block";
     } else if (diff < 48) {
       const counterId = "#nd-counter-pricing";
