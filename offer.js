@@ -20,8 +20,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
     if (diff < 48) {
-      console.log(`reste : ${diff}`);
-
       const counterId = "#nd-counter-pricing";
 
       const counter = document.querySelector(counterId);
