@@ -1,9 +1,7 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   const cookieBdOffer = Cookies.get("nd-offer");
 
-  document.querySelector("#nd-main-pricing").style.display = "none";
-  document.querySelector("#nd-welcome-flutter-pricing").style.display = "none";
-  document.querySelector("#nd-counter-pricing").style.display = "none";
+  document.querySelectorAll(".nd-offer-hidden").style.display = "none";
 
   const podiaButton = document.querySelector("#podia");
 
@@ -12,6 +10,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   if (cookieBdOffer != undefined) {
     const data = JSON.parse(cookieBdOffer);
+    const id = `#nd-${data.id.toLowerCase()}-pricing`;
+
+    document.querySelector(id).style.display = "none";
 
     const extratedDate = new Date(Date.parse(data.date));
 
@@ -37,10 +38,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
 
     if (Date.parse(data.date) > new Date().getTime()) {
-      console.log(`#nd-${data.id.toLowerCase()}-pricing`);
-      document.querySelector(
-        `#nd-${data.id.toLowerCase()}-pricing`
-      ).style.display = "block";
+      document.querySelector(id).style.display = "block";
 
       podiaScript = `<a href="https://formations.nico-develop.com/flutter-ultimate" data-podia-embed="button" data-coupon="${data.id}" data-text="ACCÉDER À LA FORMATION">ACCÉDER À LA FORMATION</a>`;
     }
