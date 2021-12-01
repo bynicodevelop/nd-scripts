@@ -6,11 +6,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
   let podiaScript =
     '<a href="https://formations.nico-develop.com/flutter-ultimate" data-podia-embed="button" data-text="ACCÉDER À LA FORMATION">ACCÉDER À LA FORMATION</a>';
 
+  let id = "#nd-main-pricing";
+
   if (cookieBdOffer != undefined) {
     const data = JSON.parse(cookieBdOffer);
-    const id = `#nd-${data.id.toLowerCase()}-pricing`;
 
-    document.querySelector(id).style.display = "none";
+    if (Date.parse(data.date) > new Date().getTime()) {
+      id = `#nd-${data.id.toLowerCase()}-pricing`;
+    }
+
+    document.querySelector(id).style.display = "block";
 
     // const extratedDate = new Date(Date.parse(data.date));
 
@@ -35,12 +40,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // }
 
     if (Date.parse(data.date) > new Date().getTime()) {
-      document.querySelector(id).style.display = "block";
-
       podiaScript = `<a href="https://formations.nico-develop.com/flutter-ultimate" data-podia-embed="button" data-coupon="${data.id}" data-text="ACCÉDER À LA FORMATION">ACCÉDER À LA FORMATION</a>`;
     }
   } else {
-    document.querySelector("#nd-main-pricing").style.display = "block";
+    document.querySelector(id).style.display = "block";
   }
 
   podiaButton.innerHTML = podiaScript;
