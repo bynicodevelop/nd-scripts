@@ -21,5 +21,8 @@ if (cookieBdOffer == undefined) {
     { expires: 365 }
   );
 
-  history.pushState({}, null, window.location.href.split("?")[0]);
+  const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
+  const url = window.location.href.replace(query, "");
+
+  history.pushState({}, null, url);
 }
