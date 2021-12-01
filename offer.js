@@ -3,8 +3,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   document.querySelector("#nd-main-pricing").style.display = "none";
   document.querySelector("#nd-welcome-flutter-pricing").style.display = "none";
-  document.querySelector("#nd-promo-24h-flutter-pricing").style.display =
-    "none";
   document.querySelector("#nd-counter-pricing").style.display = "none";
 
   const podiaButton = document.querySelector("#podia");
