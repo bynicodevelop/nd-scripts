@@ -19,22 +19,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var diff =
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
-    console.log(`reste : ${diff}`);
-
     if (diff < 48) {
-      const counterClass = "#nd-counter-pricing";
+      console.log(`reste : ${diff}`);
 
-      document.querySelector(counterClass).style.display = "block";
+      const counterId = "#nd-counter-pricing";
 
-      document.querySelector(counterClass).setAttribute("data-date", todayDate);
+      const counter = document.querySelector(counterId);
 
-      document
-        .querySelector(counterClass)
-        .setAttribute("data-hour", extratedDate.getHours());
-
-      document
-        .querySelector(counterClass)
-        .setAttribute("data-min", extratedDate.getMinutes());
+      counter.style.display = "block";
+      counter.setAttribute("data-date", todayDate);
+      counter.setAttribute("data-hour", extratedDate.getHours());
+      counter.setAttribute("data-min", extratedDate.getMinutes());
     }
 
     if (Date.parse(data.date) > new Date().getTime()) {
