@@ -33,13 +33,7 @@ if (params.offer && params.offerdays) {
   } else {
     const data = JSON.parse(cookieBdOffer);
 
-    const extratedDate = new Date(Date.parse(data.date));
-
-    var todayDate = extratedDate.toISOString().slice(0, 10);
-
-    var diff = Math.abs(extratedDate.getTime() - new Date().getTime());
-
-    if (diff < 0) {
+    if (Date.parse(data.date) < new Date().getTime()) {
       setCookieWithParams(params.offer, params.offerdays);
     }
   }
