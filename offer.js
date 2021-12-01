@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       const counterId = "#nd-counter-pricing";
 
       const counter = document.querySelector(counterId);
+      console.log(counter);
 
       counter.classList.remove("nd-offer-hidden");
       counter.setAttribute("data-date", todayDate);
