@@ -12,27 +12,27 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     document.querySelector(id).style.display = "none";
 
-    const extratedDate = new Date(Date.parse(data.date));
+    // const extratedDate = new Date(Date.parse(data.date));
 
-    var todayDate = extratedDate.toISOString().slice(0, 10);
+    // var todayDate = extratedDate.toISOString().slice(0, 10);
 
-    var diff =
-      Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
+    // var diff =
+    //   Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
-    console.log(diff);
+    // console.log(diff);
 
-    if (diff <= 0) {
-      document.querySelector("#nd-main-pricing").style.display = "block";
-    } else if (diff < 48) {
-      const counterId = "#nd-counter-pricing";
+    // if (diff <= 0) {
+    //   document.querySelector("#nd-main-pricing").style.display = "block";
+    // } else if (diff < 48) {
+    //   const counterId = "#nd-counter-pricing";
 
-      const counter = document.querySelector(counterId);
+    //   const counter = document.querySelector(counterId);
 
-      counter.classList.remove("nd-offer-hidden");
-      counter.setAttribute("data-date", todayDate);
-      counter.setAttribute("data-hour", extratedDate.getHours());
-      counter.setAttribute("data-min", extratedDate.getMinutes());
-    }
+    //   counter.classList.remove("nd-offer-hidden");
+    //   counter.setAttribute("data-date", todayDate);
+    //   counter.setAttribute("data-hour", extratedDate.getHours());
+    //   counter.setAttribute("data-min", extratedDate.getMinutes());
+    // }
 
     if (Date.parse(data.date) > new Date().getTime()) {
       document.querySelector(id).style.display = "block";
