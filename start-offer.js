@@ -20,4 +20,6 @@ if (cookieBdOffer == undefined) {
     },
     { expires: 365 }
   );
+
+  history.pushState({}, null, window.location.href.split("?")[0]);
 }
