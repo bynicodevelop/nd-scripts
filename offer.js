@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     console.log(`reste : ${diff}`);
 
     if (diff < 48) {
-      const counterClass = ".nd-counter-pricing";
+      const counterClass = "#nd-counter-pricing";
 
       document.querySelector(counterClass).style.display = "block";
 
