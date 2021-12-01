@@ -22,23 +22,25 @@ const setCookieWithParams = function (offer, offerdays) {
   );
 };
 
-if (cookieBdOffer == undefined) {
-  setCookieWithParams(params.offer, params.offerdays);
-
-  const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
-  const url = window.location.href.replace(query, "");
-
-  history.pushState({}, null, url);
-} else {
-  const data = JSON.parse(cookieBdOffer);
-
-  const extratedDate = new Date(Date.parse(data.date));
-
-  var todayDate = extratedDate.toISOString().slice(0, 10);
-
-  var diff = Math.abs(extratedDate.getTime() - new Date().getTime());
-
-  if (diff < 0) {
+if (params.offer && params.offerdays) {
+  if (cookieBdOffer == undefined) {
     setCookieWithParams(params.offer, params.offerdays);
+
+    const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
+    const url = window.location.href.replace(query, "");
+
+    history.pushState({}, null, url);
+  } else {
+    const data = JSON.parse(cookieBdOffer);
+
+    const extratedDate = new Date(Date.parse(data.date));
+
+    var todayDate = extratedDate.toISOString().slice(0, 10);
+
+    var diff = Math.abs(extratedDate.getTime() - new Date().getTime());
+
+    if (diff < 0) {
+      setCookieWithParams(params.offer, params.offerdays);
+    }
   }
 }
