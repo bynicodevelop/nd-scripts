@@ -1,8 +1,6 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   const cookieBdOffer = Cookies.get("nd-offer");
 
-  document.querySelectorAll(".nd-offer-hidden").style.display = "none";
-
   const podiaButton = document.querySelector("#podia");
 
   let podiaScript =
