@@ -34,10 +34,10 @@ if (params.offer && params.offerdays) {
     ) {
       setCookieWithParams(params.offer, params.offerdays);
     }
-
-    const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
-    const url = window.location.href.replace(query, "");
-
-    history.pushState({}, null, url);
   }
+
+  const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
+  const url = window.location.href.replace(query, "");
+
+  history.pushState({}, null, url);
 }
