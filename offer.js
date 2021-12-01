@@ -20,18 +20,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
     if (diff < 48) {
-      document.querySelector("#nd-counter-pricing").style.display = "block";
+      const counterClass = ".nd-counter-pricing";
+
+      document.querySelector(counterClass).style.display = "block";
+
+      document.querySelector(counterClass).setAttribute("data-date", todayDate);
 
       document
-        .querySelector("#nd-counter-pricing")
-        .setAttribute("data-date", todayDate);
-
-      document
-        .querySelector("#nd-counter-pricing")
+        .querySelector(counterClass)
         .setAttribute("data-hour", extratedDate.getHours());
 
       document
-        .querySelector("#nd-counter-pricing")
+        .querySelector(counterClass)
         .setAttribute("data-min", extratedDate.getMinutes());
     }
 

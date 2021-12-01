@@ -16,7 +16,7 @@ if (cookieBdOffer == undefined) {
     "nd-offer",
     {
       id: params.offer,
-      date: date.addDays(params.offerdays),
+      date: date.addDays(parseInt(params.offerdays)),
     },
     { expires: 365 }
   );
