@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var diff =
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
-    console.log(Math.abs(extratedDate.getTime() - new Date().getTime()));
+    console.log(extratedDate.getTime() - new Date().getTime());
 
     if (diff < 0) {
       document.querySelector("#nd-main-pricing").style.display = "block";
