@@ -25,11 +25,6 @@ const setCookieWithParams = function (offer, offerdays) {
 if (params.offer && params.offerdays) {
   if (cookieBdOffer == undefined) {
     setCookieWithParams(params.offer, params.offerdays);
-
-    const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
-    const url = window.location.href.replace(query, "");
-
-    history.pushState({}, null, url);
   } else {
     const data = JSON.parse(cookieBdOffer);
 
@@ -39,5 +34,10 @@ if (params.offer && params.offerdays) {
     ) {
       setCookieWithParams(params.offer, params.offerdays);
     }
+
+    const query = `offer=${params.offer}&offerdays=${params.offerdays}`;
+    const url = window.location.href.replace(query, "");
+
+    history.pushState({}, null, url);
   }
 }
