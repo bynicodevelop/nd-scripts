@@ -19,13 +19,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var diff =
       Math.abs(extratedDate.getTime() - new Date().getTime()) / 3600000;
 
+    console.log(diff);
+
     if (diff < 0) {
       document.querySelector("#nd-main-pricing").style.display = "block";
     } else if (diff < 48) {
       const counterId = "#nd-counter-pricing";
 
       const counter = document.querySelector(counterId);
-      console.log(counter);
 
       counter.classList.remove("nd-offer-hidden");
       counter.setAttribute("data-date", todayDate);
