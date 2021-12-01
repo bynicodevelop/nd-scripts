@@ -1,4 +1,6 @@
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 
-console.log(params);
+const videoPlayer = document.querySelector("#yt-video");
+
+videoPlayer.setAttribute("data-url", `https://youtu.be/${params.yt}`);
