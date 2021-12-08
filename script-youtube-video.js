@@ -14,6 +14,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       flutterStarterForm.classList.remove("nd-cta-hidden");
     }
   } else {
-    programButton.classList.remove("nd-cta-hidden");
+    if (programButton) {
+      programButton.classList.remove("nd-cta-hidden");
+    }
   }
 });
