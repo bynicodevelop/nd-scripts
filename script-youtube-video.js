@@ -10,7 +10,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const flutterStarterForm = document.querySelector("#flutter-starter-form");
 
   if (params.subscriber) {
-    flutterStarterForm.classList.remove("nd-cta-hidden");
+    if (flutterStarterForm) {
+      flutterStarterForm.classList.remove("nd-cta-hidden");
+    }
   } else {
     programButton.classList.remove("nd-cta-hidden");
   }
